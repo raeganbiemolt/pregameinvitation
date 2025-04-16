@@ -6,9 +6,25 @@ document.getElementById('startBtn').addEventListener('click', () => {
   const music = document.getElementById('partyMusic');
   music.play().catch(err => console.log('Autoplay blocked'));
 
-  const invite = document.querySelector('.invitation-img');
-  invite.style.animationPlayState = 'running';
-  invite.style.opacity = '1';
+  // Slide in closed envelope
+  const envelopeClosed = document.getElementById('envelopeClosed');
+  envelopeClosed.style.transform = 'translateY(-100vh)';
+  envelopeClosed.style.transition = 'transform 1s ease-out';
+  setTimeout(() => {
+    envelopeClosed.style.transform = 'translateY(0)';
+  }, 100);
+
+  // Swap to open envelope after 1.2s
+  setTimeout(() => {
+    envelopeClosed.style.display = 'none';
+    const envelopeOpen = document.getElementById('envelopeOpen');
+    envelopeOpen.style.display = 'block';
+  }, 1300);
+
+  // Hide envelope after invitation appears
+  setTimeout(() => {
+    document.getElementById('envelopeOpen').style.display = 'none';
+  }, 4000);
 
   // Show face overlay after 5s
   setTimeout(() => {

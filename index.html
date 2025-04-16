@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PREGAME PARTY INVITE</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="startScreen">
@@ -13,17 +13,18 @@
 
   <div id="animationWrapper" style="display: none;">
     <div class="envelope-container">
-      <img src="envelope.png" alt="Envelope" class="envelope" id="envelope">
+      <img src="envelope_closed.png" alt="Closed Envelope" class="envelope" id="envelopeClosed">
+      <img src="envelope_open.png" alt="Open Envelope" class="envelope open" id="envelopeOpen" style="display: none;">
     </div>
     <div class="invitation" id="invite">
-      <img src="invitation.png" alt="Invitation" class="invitation-img">
+      <img src="invitation.png" alt="Invitation" class="invitation-img" />
     </div>
     <div class="face-overlay" id="faceOverlay">
-      <img src="2.png" alt="Raegan Face with Bubble" class="face-shake">
+      <img src="2.png" alt="Raegan Face with Bubble" class="face-shake" />
     </div>
     <canvas id="confetti"></canvas>
     <audio id="partyMusic">
-      <source src="music.mp3#t=194" type="audio/mpeg">
+      <source src="music.mp3#t=194" type="audio/mpeg" />
     </audio>
   </div>
 

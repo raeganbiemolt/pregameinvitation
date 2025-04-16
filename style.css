@@ -29,6 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 
 .envelope {
@@ -36,6 +37,7 @@ body {
   max-width: 600px;
   height: auto;
   object-fit: contain;
+  position: absolute;
 }
 
 .invitation {
@@ -50,7 +52,7 @@ body {
   max-width: 500px;
   opacity: 0;
   animation: popOut 2s ease-out forwards;
-  animation-delay: 1.5s;
+  animation-delay: 2.5s;
 }
 
 @keyframes popOut {
