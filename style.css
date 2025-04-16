@@ -52,6 +52,21 @@ body {
   max-width: 500px;
   display: none;
   position: relative;
+  transition: transform 1s ease-out;
+}
+
+.invitation-img.slide-left {
+  transform: translate(-85vw, -50%);
+}
+
+#wordsImage {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5vw;
+  width: 35vw;
+  max-width: 300px;
 }
 
 .face-overlay {
