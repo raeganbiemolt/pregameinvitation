@@ -10,12 +10,12 @@ document.getElementById('startBtn').addEventListener('click', () => {
   invite.style.animationPlayState = 'running';
   invite.style.opacity = '1';
 
-  // Show face after 5s
+  // Show face overlay after 5s
   setTimeout(() => {
     document.getElementById('faceOverlay').style.display = 'flex';
   }, 5000);
 
-  // Tap anywhere to hide face
+  // Tap to remove face
   document.body.addEventListener('click', () => {
     const face = document.getElementById('faceOverlay');
     if (face.style.display === 'flex') {
@@ -23,46 +23,48 @@ document.getElementById('startBtn').addEventListener('click', () => {
     }
   });
 
-  // Confetti setup
-  const canvas = document.getElementById("confetti");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  // Start confetti after 5s
+  setTimeout(() => {
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-  const pieces = Array.from({length: 150}, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * -canvas.height,
-    w: Math.random() * 8 + 4,
-    h: Math.random() * 10 + 4,
-    a: Math.random() * Math.PI * 2,
-    c: `hsl(${Math.random() * 360}, 100%, 50%)`,
-    d: Math.random() * 5 + 2
-  }));
+    const pieces = Array.from({length: 150}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * -canvas.height,
+      w: Math.random() * 8 + 4,
+      h: Math.random() * 10 + 4,
+      a: Math.random() * Math.PI * 2,
+      c: `hsl(${Math.random() * 360}, 100%, 50%)`,
+      d: Math.random() * 5 + 2
+    }));
 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    pieces.forEach(p => {
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate(p.a);
-      ctx.fillStyle = p.c;
-      ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
-      ctx.restore();
-    });
-    update();
-    requestAnimationFrame(draw);
-  }
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      pieces.forEach(p => {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.a);
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+      });
+      update();
+      requestAnimationFrame(draw);
+    }
 
-  function update() {
-    pieces.forEach(p => {
-      p.y += p.d;
-      p.a += 0.02;
-      if (p.y > canvas.height) {
-        p.y = 0;
-        p.x = Math.random() * canvas.width;
-      }
-    });
-  }
+    function update() {
+      pieces.forEach(p => {
+        p.y += p.d;
+        p.a += 0.02;
+        if (p.y > canvas.height) {
+          p.y = 0;
+          p.x = Math.random() * canvas.width;
+        }
+      });
+    }
 
-  draw();
+    draw();
+  }, 5000);
 });
