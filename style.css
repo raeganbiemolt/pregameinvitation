@@ -50,7 +50,9 @@ body {
 .invitation-img {
   width: 85vw;
   max-width: 500px;
-  opacity: 1;
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
 }
 
 .face-overlay {
