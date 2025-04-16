@@ -43,28 +43,28 @@ body {
 .invitation {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 35%;
+  transform: translateY(-50%);
 }
 
 .invitation-img {
-  width: 85vw;
-  max-width: 500px;
+  width: 45vw;
+  max-width: 400px;
   display: none;
   position: relative;
   transition: transform 1s ease-out;
 }
 
 .invitation-img.slide-left {
-  transform: translate(-85vw, -50%);
+  transform: translateX(-10vw);
 }
 
 #wordsImage {
   display: none;
   position: absolute;
   top: 50%;
+  left: 55%;
   transform: translateY(-50%);
-  right: 5vw;
   width: 35vw;
   max-width: 300px;
 }
