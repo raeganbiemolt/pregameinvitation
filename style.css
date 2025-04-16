@@ -51,6 +51,7 @@ body {
   width: 85vw;
   max-width: 500px;
   display: none;
+  position: relative;
 }
 
 .face-overlay {
