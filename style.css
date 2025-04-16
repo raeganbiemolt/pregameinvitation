@@ -52,7 +52,7 @@ body {
   max-width: 500px;
   opacity: 0;
   animation: popOut 2s ease-out forwards;
-  animation-delay: 2.5s;
+  animation-delay: 3s;
 }
 
 @keyframes popOut {

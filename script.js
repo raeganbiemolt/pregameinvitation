@@ -6,24 +6,27 @@ document.getElementById('startBtn').addEventListener('click', () => {
   const music = document.getElementById('partyMusic');
   music.play().catch(err => console.log('Autoplay blocked'));
 
-  // Slide in closed envelope
-  const envelopeClosed = document.getElementById('envelopeClosed');
-  envelopeClosed.style.transform = 'translateY(-100vh)';
-  envelopeClosed.style.transition = 'transform 1s ease-out';
-  setTimeout(() => {
-    envelopeClosed.style.transform = 'translateY(0)';
-  }, 100);
+  // Closed envelope slide in
+  const closed = document.getElementById('envelopeClosed');
+  closed.style.transform = 'translateY(-100vh)';
+  closed.style.transition = 'transform 1s ease-out';
+  setTimeout(() => { closed.style.transform = 'translateY(0)'; }, 100);
 
-  // Swap to open envelope after 1.2s
+  // Open envelope
   setTimeout(() => {
-    envelopeClosed.style.display = 'none';
-    const envelopeOpen = document.getElementById('envelopeOpen');
-    envelopeOpen.style.display = 'block';
-  }, 1300);
+    closed.style.display = 'none';
+    document.getElementById('envelopeOpen').style.display = 'block';
+  }, 1200);
 
-  // Hide envelope after invitation appears
+  // Half-open envelope
   setTimeout(() => {
     document.getElementById('envelopeOpen').style.display = 'none';
+    document.getElementById('envelopeHalf').style.display = 'block';
+  }, 2200);
+
+  // Hide envelope after invite appears
+  setTimeout(() => {
+    document.getElementById('envelopeHalf').style.display = 'none';
   }, 4000);
 
   // Show face overlay after 5s
