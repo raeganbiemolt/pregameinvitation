@@ -6,6 +6,9 @@ document.getElementById('startBtn').addEventListener('click', () => {
   const music = document.getElementById('partyMusic');
   music.play().catch(err => console.log('Autoplay blocked'));
 
+  const inviteImg = document.querySelector('.invitation-img');
+  const halfEnvelope = document.getElementById('envelopeHalf');
+
   // Closed envelope slide in
   const closed = document.getElementById('envelopeClosed');
   closed.style.transform = 'translateY(-100vh)';
@@ -21,16 +24,18 @@ document.getElementById('startBtn').addEventListener('click', () => {
   // Half-open envelope
   setTimeout(() => {
     document.getElementById('envelopeOpen').style.display = 'none';
-    document.getElementById('envelopeHalf').style.display = 'block';
+    halfEnvelope.style.display = 'block';
   }, 2200);
 
-  // Show invitation and hide half envelope simultaneously
+  // Show invitation + hide half envelope precisely
   setTimeout(() => {
-    document.querySelector('.invitation-img').style.display = 'block';
-    document.getElementById('envelopeHalf').style.display = 'none';
+    halfEnvelope.style.display = 'none';
+    // Force browser to register DOM change before next
+    void halfEnvelope.offsetWidth;
+    inviteImg.style.display = 'block';
   }, 3200);
 
-  // Show face overlay after 5s
+  // Face overlay
   setTimeout(() => {
     document.getElementById('faceOverlay').style.display = 'flex';
   }, 5000);
