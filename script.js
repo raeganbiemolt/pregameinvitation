@@ -24,7 +24,12 @@ document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('envelopeHalf').style.display = 'block';
   }, 2200);
 
-  // Hide envelope after invite appears
+  // Show invitation after 1 more second (3.2s total)
+  setTimeout(() => {
+    document.querySelector('.invitation-img').style.display = 'block';
+  }, 3200);
+
+  // Hide envelope after invite is revealed
   setTimeout(() => {
     document.getElementById('envelopeHalf').style.display = 'none';
   }, 4000);
