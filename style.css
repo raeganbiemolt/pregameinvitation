@@ -1,0 +1,86 @@
+
+body {
+  margin: 0;
+  background: white;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+#startScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#startBtn {
+  font-size: 24px;
+  padding: 20px 40px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.envelope-container {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.envelope {
+  width: 300px;
+  animation: flipOpen 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.invitation {
+  opacity: 0;
+  text-align: center;
+}
+
+.invitation-img {
+  width: 280px;
+  animation: slideOut 2s ease-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+@keyframes flipOpen {
+  0% { transform: rotateX(0); }
+  100% { transform: rotateX(180deg); }
+}
+
+@keyframes slideOut {
+  0% { opacity: 0; transform: translateY(100px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.face-wrapper {
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  align-items: center;
+}
+
+.face {
+  width: 120px;
+}
+
+.speech-bubble {
+  opacity: 0;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 15px;
+  animation: speak 2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+@keyframes speak {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}

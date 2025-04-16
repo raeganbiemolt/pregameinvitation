@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PREGAME PARTY INVITE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startScreen">
+    <button id="startBtn">Click to Start</button>
+  </div>
+
+  <div id="animationWrapper" style="display: none;">
+    <div class="envelope-container">
+      <img src="envelope.png" alt="Envelope" class="envelope" id="envelope">
+    </div>
+    <div class="invitation" id="invite">
+      <img src="invitation.png" alt="Invitation" class="invitation-img">
+    </div>
+    <div class="face-wrapper" id="faceWrapper">
+      <img src="2.png" alt="Raegan Face" class="face">
+      <div class="speech-bubble">Get ready to party!</div>
+    </div>
+    <canvas id="confetti"></canvas>
+    <audio id="partyMusic">
+      <source src="music.mp3#t=194" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
