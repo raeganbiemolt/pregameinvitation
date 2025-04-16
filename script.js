@@ -24,15 +24,11 @@ document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('envelopeHalf').style.display = 'block';
   }, 2200);
 
-  // Show invitation after 1 more second (3.2s total)
+  // Show invitation and hide half envelope simultaneously
   setTimeout(() => {
     document.querySelector('.invitation-img').style.display = 'block';
-  }, 3200);
-
-  // Hide envelope after invite is revealed
-  setTimeout(() => {
     document.getElementById('envelopeHalf').style.display = 'none';
-  }, 4000);
+  }, 3200);
 
   // Show face overlay after 5s
   setTimeout(() => {
