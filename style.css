@@ -50,14 +50,7 @@ body {
 .invitation-img {
   width: 85vw;
   max-width: 500px;
-  opacity: 0;
-  animation: popOut 2s ease-out forwards;
-  animation-delay: 3s;
-}
-
-@keyframes popOut {
-  0% { transform: translateY(50px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  opacity: 1;
 }
 
 .face-overlay {
