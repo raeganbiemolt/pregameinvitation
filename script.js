@@ -92,7 +92,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
 
   
   
-  // Remove invitation and show words.png in same place at 8 seconds
+  // At 8s: Hide invite and show words
   setTimeout(() => {
     inviteImg.style.display = 'none';
     wordsImg.style.display = 'block';
@@ -102,8 +102,32 @@ document.getElementById('startBtn').addEventListener('click', () => {
     wordsImg.style.maxWidth = inviteImg.style.maxWidth;
     wordsImg.style.position = 'absolute';
     wordsImg.style.transform = 'translateY(-50%)';
-    wordsImg.style.right = '';
+    wordsImg.dataset.visible = "true";
+    inviteImg.dataset.visible = "false";
   }, 11200);
+
+  // Show face overlay at 5s
+  setTimeout(() => {
+    document.getElementById('faceOverlay').style.display = 'flex';
+  }, 5000);
+
+  // Hide face overlay after 4s (at 9s)
+  setTimeout(() => {
+    document.getElementById('faceOverlay').style.display = 'none';
+  }, 9000);
+
+  // Enable toggling between invite and words on screen tap
+  document.body.addEventListener('click', () => {
+    const invite = document.querySelector('.invitation-img');
+    const words = document.getElementById('wordsImage');
+    if (invite.style.display === 'none') {
+      invite.style.display = 'block';
+      words.style.display = 'none';
+    } else if (invite.style.display === 'block') {
+      invite.style.display = 'none';
+      words.style.display = 'block';
+    }
+  });
     
 
 
