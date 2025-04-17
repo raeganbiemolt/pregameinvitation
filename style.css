@@ -43,7 +43,7 @@ body {
 .invitation-img {
   display: none;
   position: fixed;
-  top: 55%;
+  top: 62%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
@@ -55,7 +55,7 @@ body {
 #wordsImage {
   display: none;
   position: fixed;
-  top: 55%;
+  top: 62%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90vw;
