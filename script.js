@@ -82,6 +82,8 @@ document.getElementById('startBtn').addEventListener('click', () => {
   }, 3199);
   setTimeout(() => {
     inviteImg.style.display = 'block';
+    inviteImg.style.width = '60vw';
+    inviteImg.style.maxWidth = '600px';
     drawConfetti();
   }, 3200);
 
@@ -94,6 +96,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
   
   
   
+  
   // At 8s: Hide invite and show words
   setTimeout(() => {
     inviteImg.style.display = 'none';
@@ -102,9 +105,10 @@ document.getElementById('startBtn').addEventListener('click', () => {
     wordsImg.style.left = '50%';
     wordsImg.style.top = '50%';
     wordsImg.style.transform = 'translate(-50%, -50%)';
-    wordsImg.style.width = inviteImg.style.width;
-    wordsImg.style.maxWidth = inviteImg.style.maxWidth;
+    wordsImg.style.width = '60vw';
+    wordsImg.style.maxWidth = '600px';
   }, 11200);
+    
     
     
 
