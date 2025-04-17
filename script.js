@@ -56,7 +56,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
     });
   }
 
-  // Confetti will be started manually after invitation appears
+  // drawConfetti(); // moved to sync with invitation.png
 
   // Closed envelope slide in
   const closed = document.getElementById('envelopeClosed');
@@ -95,8 +95,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
     const face = document.getElementById('faceOverlay');
     if (face) face.style.display = 'none';
 
-    // Replace invitation with words image
-    inviteImg.style.display = 'none';
+    // Slide invitation left
     inviteImg.style.transition = 'transform 1s ease-out';
     inviteImg.style.transform = 'translateX(-35vw)';
 
@@ -107,20 +106,10 @@ document.getElementById('startBtn').addEventListener('click', () => {
 
     // Switch to falling drink bottles
     useDrinks = true;
-    pieces = Array.from({length: 10}, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * -canvas.height,
-      w: 40,
-      h: 40,
-      a: Math.random() * Math.PI * 2,
-      c: `hsl(${Math.random() * 360}, 100%, 50%)`,
-      d: Math.random() * 1 + 0.5,
-      img: (() => {
-        let i = new Image();
-        i.src = 'drink1.png';
-        return i;
-      })()
-    }));
+    pieces.forEach(p => {
+      p.img = new Image();
+      p.img.src = 'drink1.png';
+    });
   }, 10000);
 
   // Allow manual face removal (optional)
