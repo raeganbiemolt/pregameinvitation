@@ -84,10 +84,10 @@ document.getElementById('startBtn').addEventListener('click', () => {
     inviteImg.style.display = 'block';
     inviteImg.style.position = 'absolute';
     inviteImg.style.left = '50%';
-    inviteImg.style.top = '50%';
+    inviteImg.style.top = '45%';
     inviteImg.style.transform = 'translate(-50%, -50%)';
-    inviteImg.style.width = '90vw';
-    inviteImg.style.maxWidth = '95vw';
+    inviteImg.style.width = '85vw';
+    inviteImg.style.maxWidth = '90vw';
     drawConfetti();
   }, 3200);
 
@@ -109,8 +109,8 @@ document.getElementById('startBtn').addEventListener('click', () => {
     wordsImg.style.left = '50%';
     wordsImg.style.top = '50%';
     wordsImg.style.transform = 'translate(-50%, -50%)';
-    wordsImg.style.width = '90vw';
-    wordsImg.style.maxWidth = '95vw';
+    wordsImg.style.width = '85vw';
+    wordsImg.style.maxWidth = '90vw';
   }, 11200);
     
     
