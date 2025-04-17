@@ -92,19 +92,23 @@ document.getElementById('startBtn').addEventListener('click', () => {
 
   
   
+  
   // At 8s: Hide invite and show words
   setTimeout(() => {
+    const inviteRect = inviteImg.getBoundingClientRect();
     inviteImg.style.display = 'none';
     wordsImg.style.display = 'block';
+    wordsImg.style.position = 'absolute';
     wordsImg.style.left = inviteImg.style.left;
     wordsImg.style.top = inviteImg.style.top;
     wordsImg.style.width = inviteImg.style.width;
     wordsImg.style.maxWidth = inviteImg.style.maxWidth;
-    wordsImg.style.position = 'absolute';
     wordsImg.style.transform = 'translateY(-50%)';
+    wordsImg.style.right = '';
     wordsImg.dataset.visible = "true";
     inviteImg.dataset.visible = "false";
   }, 11200);
+    
 
   // Show face overlay at 5s
   setTimeout(() => {
