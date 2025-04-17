@@ -90,27 +90,18 @@ document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('faceOverlay').style.display = 'flex';
   }, 5000);
 
-  // Remove face, slide invite, show words, and swap confetti at 10s
+  
+  // Remove invitation and show words.png in same place at 8 seconds
   setTimeout(() => {
-    const face = document.getElementById('faceOverlay');
-    if (face) face.style.display = 'none';
-
-    // Slide invitation left
-    inviteImg.style.transition = 'transform 1s ease-out';
-    inviteImg.style.transform = 'translateX(-35vw)';
-
-    // Show words image
+    inviteImg.style.display = 'none';
     wordsImg.style.display = 'block';
-    wordsImg.style.transition = 'transform 1s ease-out';
-    wordsImg.style.transform = 'translateX(0)';
+    wordsImg.style.position = 'absolute';
+    wordsImg.style.left = inviteImg.style.left || '35%';
+    wordsImg.style.top = inviteImg.style.top || '50%';
+    wordsImg.style.transform = 'translateY(-50%)';
+    wordsImg.style.width = inviteImg.style.width;
+  }, 11200);
 
-    // Switch to falling drink bottles
-    useDrinks = true;
-    pieces.forEach(p => {
-      p.img = new Image();
-      p.img.src = 'drink1.png';
-    });
-  }, 10000);
 
   // Allow manual face removal (optional)
   document.body.addEventListener('click', () => {
