@@ -82,6 +82,10 @@ document.getElementById('startBtn').addEventListener('click', () => {
   }, 3199);
   setTimeout(() => {
     inviteImg.style.display = 'block';
+    inviteImg.style.position = 'absolute';
+    inviteImg.style.left = '50%';
+    inviteImg.style.top = '50%';
+    inviteImg.style.transform = 'translate(-50%, -50%)';
     inviteImg.style.width = '60vw';
     inviteImg.style.maxWidth = '600px';
     drawConfetti();
