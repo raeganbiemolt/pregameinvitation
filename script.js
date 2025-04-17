@@ -91,16 +91,20 @@ document.getElementById('startBtn').addEventListener('click', () => {
   }, 5000);
 
   
+  
   // Remove invitation and show words.png in same place at 8 seconds
   setTimeout(() => {
     inviteImg.style.display = 'none';
     wordsImg.style.display = 'block';
-    wordsImg.style.position = 'absolute';
-    wordsImg.style.left = inviteImg.style.left || '35%';
-    wordsImg.style.top = inviteImg.style.top || '50%';
-    wordsImg.style.transform = 'translateY(-50%)';
+    wordsImg.style.left = inviteImg.style.left;
+    wordsImg.style.top = inviteImg.style.top;
     wordsImg.style.width = inviteImg.style.width;
+    wordsImg.style.maxWidth = inviteImg.style.maxWidth;
+    wordsImg.style.position = 'absolute';
+    wordsImg.style.transform = 'translateY(-50%)';
+    wordsImg.style.right = '';
   }, 11200);
+    
 
 
   // Allow manual face removal (optional)
