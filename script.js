@@ -56,6 +56,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
     });
   }
 
+  // Animate envelope sequence
   const closed = document.getElementById('envelopeClosed');
   closed.style.transform = 'translateY(-100vh)';
   closed.style.transition = 'transform 1s ease-out';
@@ -79,6 +80,7 @@ document.getElementById('startBtn').addEventListener('click', () => {
     drawConfetti();
   }, 3200);
 
+  // Face overlay
   setTimeout(() => {
     document.getElementById('faceOverlay').style.display = 'flex';
   }, 5000);
@@ -87,11 +89,13 @@ document.getElementById('startBtn').addEventListener('click', () => {
     document.getElementById('faceOverlay').style.display = 'none';
   }, 9000);
 
+  // Show words after 8s
   setTimeout(() => {
     inviteImg.style.display = 'none';
     wordsImg.style.display = 'block';
   }, 11200);
 
+  // Toggle on tap
   document.body.addEventListener('click', () => {
     const face = document.getElementById('faceOverlay');
     if (face && face.style.display === 'flex') {

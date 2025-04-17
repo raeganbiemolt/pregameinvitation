@@ -40,25 +40,33 @@ body {
   position: absolute;
 }
 
-.image-center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.invitation {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  max-width: 600px;
-  z-index: 15;
-  pointer-events: none;
+  left: 35%;
+  transform: translateY(-50%);
 }
 
-.image-center-container img {
-  width: 100%;
-  height: auto;
+.invitation-img {
+  width: 45vw;
+  max-width: 400px;
+  display: none;
+  position: relative;
+  transition: transform 1s ease-out;
+}
+
+.invitation-img.slide-left {
+  transform: translateX(-10vw);
+}
+
+#wordsImage {
+  display: none;
   position: absolute;
-  pointer-events: auto;
+  top: 50%;
+  left: 80%;
+  transform: translateY(-50%);
+  width: 35vw;
+  max-width: 300px;
 }
 
 .face-overlay {
